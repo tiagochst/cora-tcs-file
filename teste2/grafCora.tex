@@ -1,0 +1,104 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+
+
+\usepackage{ae,aecompl}
+\usepackage{pslatex}
+\usepackage{epsfig}
+\usepackage{geometry}
+\usepackage{url}
+\usepackage{textcomp}
+\usepackage{ae}
+\usepackage{subfig}
+\usepackage{indentfirst}
+\usepackage{textcomp}
+\usepackage{color}
+\usepackage{setspace}
+\usepackage{verbatim}
+\usepackage{hyperref}
+
+% Gráficos
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.3}
+\usepgfplotslibrary{groupplots}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,%
+    citecolor=black,%
+    filecolor=black,%
+    linkcolor=blue,%
+    urlcolor=blue
+}
+
+\usepackage[compact]{titlesec}
+\titlespacing{\section}{0pt}{*0}{*0}
+\titlespacing{\subsection}{0pt}{*0}{*0}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+
+% Definindo as margens para 2cm e o espaçamento entre linhas para 1.5
+% Relatório parcial deve ter espaçamento simples
+% \linespread{1.5}
+
+\geometry{ 
+  a4paper,	% Formato do papel
+  tmargin=30mm,	% Margem superior
+  bmargin=30mm,	% Margem inferior
+  lmargin=20mm,	% Margem esquerda
+  rmargin=20mm,	% Margem direita
+  footskip=10mm	% Espaço entre o rodapé e o fim do texto
+}
+\renewcommand{\thetable}{\Roman{table}}
+\newcommand{\x} {$\bullet$}
+
+
+\begin{document}
+
+\vspace{-5mm}
+
+\begin{tikzpicture}
+  \begin{axis}[
+    ylabel=taxa,
+    xlabel=Tempo,
+    height=14cm,
+    width=14cm,
+    grid=major,
+    ytick = data,
+ytick ={1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11,12},
+yticklabels={1,2,5.5,6,9,11,12,18,24,36,48,54},
+legend style={at={(0.5,-0.15)},
+anchor=north,legend columns=-1}]    
+    \addplot[mesh]
+    table[x=t,y=rate] {coraPlot};
+  
+    \legend{ Algoritmo Cora - Desvio mínimo 40 máximo 120 t=100ms}
+  \end{axis}
+\end{tikzpicture}
+
+\centering
+\begin{tabular}{lllll}
+Taxa & Throuput EWMA & Sucesso & Tentativas & Sucesso/Tentativas   \tabularnewline
+\hline
+1 & 0.9 & 309 & 310 & 99.68\% \tabularnewline
+2 & 1.9 & 199 & 202 & 98.51\% \tabularnewline
+5.5 & 4.8 & 246 & 254 & 96.85\% \tabularnewline
+6 & 5.6 & 501 & 512 & 97.85\% \tabularnewline
+9 & 7.8 & 176 & 180 & 97.78\% \tabularnewline
+11 & 9.5 & 25 & 25 & 100.00\% \tabularnewline
+12 & 11.1 & 50 & 50 & 100.00\% \tabularnewline
+18 & 16.2 & 123 & 124 & 99.19\%\tabularnewline
+24 & 21.3 & 275 & 277 & 99.28\% \tabularnewline
+36 & 30.4 & 262 & 266 & 98.50\% \tabularnewline
+48 & 39 & 959 & 968 & 99.07\% \tabularnewline
+54 & 43.3 & 5750 & 5810 & 98.97\% \tabularnewline
+\end{tabular}
+\begin{tabular}{llll}
+ média de throughput & total enviado & total tentativas & total enviado/tentativas   \tabularnewline
+\hline
+ 34.78 & 8875 & 8978 & 98.85\% \tabularnewline
+\end{tabular}
+
+
+\end{document}

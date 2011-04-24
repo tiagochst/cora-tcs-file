@@ -1,0 +1,14 @@
+baixou-se um video (http://www.youtube.com/watch?v=U6tV11acSRk) e o viu até o fim.
+comando no terminal
+
+while true; do cat /sys/kernel/debug/ieee80211/phy0/netdev\:wlan0/stations/00\:1d\:e0\:11\:33\:7d/rc_stats >> /home/cora ; sleep 1 ; done
+while true; do cat /sys/kernel/debug/ieee80211/phy0/netdev\:wlan0/stations/00\:1d\:e0\:11\:33\:7d/rc_stats >> /home/cora ; done
+
+problemas nosso pen drive foi posto em sdb1 e não no sda! Verificar isso! por pouco não acabou a memória do roteador.
+mount /dev/sdb1 /media
+logo estou pondo em media os arquivo
+
+Valores do algoritmo
+tempo 100ms
+desvio minimo 40 
+max 120

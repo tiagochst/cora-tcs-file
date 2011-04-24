@@ -1,24 +1,5 @@
-# Programa para benchmark
-CC = gcc
-CFLAGS = -g -Wall -lpthread
-LIBS = -lm
-OBJS = main.o banco.o lista.o locker.o test_threads.o
-EXEC = run
-
-all: $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBS) -o $(EXEC)
-
-run: all
-	./$(EXEC)
-
-$(OBJS): %.o: %.c
-	$(CC) -c $(CFLAGS) $<
-
-clean:
-	rm -f $(OBJS) $(EXEC) *~
-
 #Relatorio
-file=lab2
+file = grafCora
 rel:
 	latex $(file).tex
 	latex $(file).tex

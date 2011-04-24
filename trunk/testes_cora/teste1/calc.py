@@ -15,7 +15,7 @@ for line in file('data.txt'):
 				oldCount= line[11]
 				oldRate= line[1]
 	 			x0.append(copy)
-	 			rate.append(line[11])
+	 			rate.append(line[1])
 
 
 f = open('teste', 'w')

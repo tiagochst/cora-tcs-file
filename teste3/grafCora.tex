@@ -71,33 +71,33 @@ yticklabels={1,2,5.5,6,9,11,12,18,24,36,48,54},
 legend style={at={(0.5,-0.15)},
 anchor=north,legend columns=-1}]    
     \addplot[mesh]
-    table[x=t,y=rate] {coraPlot};
+    table[x=t,y=rate] {minstrelPlot};
   
-    \legend{ Algoritmo Cora - Desvio mínimo 40 máximo 120 t=100ms}
+    \legend{ Algoritmo minstrel }
   \end{axis}
 \end{tikzpicture}
 
 \centering
 \begin{tabular}{lllll}
-Taxa & Throuput EWMA & Sucesso & Tentativas & Sucesso/Tentativas   \tabularnewline
+TAXA & Throuput EWMA & ENVIADOS & TENTATIVAS & Porcentagem   \tabularnewline
 \hline
-1 & 0.9 & 309 & 310 & 99.68\% \tabularnewline
-2 & 1.9 & 199 & 202 & 98.51\% \tabularnewline
-5.5 & 4.8 & 246 & 254 & 96.85\% \tabularnewline
-6 & 5.6 & 501 & 512 & 97.85\% \tabularnewline
-9 & 7.8 & 176 & 180 & 97.78\% \tabularnewline
-11 & 9.5 & 25 & 25 & 100.00\% \tabularnewline
-12 & 11.1 & 50 & 50 & 100.00\% \tabularnewline
-18 & 16.2 & 123 & 124 & 99.19\%\tabularnewline
-24 & 21.3 & 275 & 277 & 99.28\% \tabularnewline
-36 & 30.4 & 262 & 266 & 98.50\% \tabularnewline
-48 & 39 & 959 & 968 & 99.07\% \tabularnewline
-54 & 43.3 & 5750 & 5810 & 98.97\% \tabularnewline
+1 & 0.8 & 44 & 48 & 91.67\% \tabularnewline
+2 & 0.4 & 1 & 1 & 100.00\%  \tabularnewline
+5.5 & 1.2 & 1 & 1 & 100.00\% \tabularnewline
+6 & 0 & 0 & 0 & 0.00\% \tabularnewline
+9 & 0 & 0 & 0 & 0.00\% \tabularnewline
+11 & 0 & 0 & 0 & 0.00\% \tabularnewline
+12 & 0 & 0 & 0 & 0.00\% \tabularnewline
+18 & 0 & 0 & 0 & 0.00\% \tabularnewline
+24 & 21 & 200 & 202 & 99.01\% \tabularnewline
+36 & 13.3 & 2 & 2 & 100.00\% \tabularnewline
+48 & 17 & 2 & 2 & 100.00\% \tabularnewline
+54 & 43 & 8608 & 8712 & 98.81\% \tabularnewline
 \end{tabular}
 \begin{tabular}{llll}
  média de throughput & total enviado & total tentativas & total enviado/tentativas   \tabularnewline
 \hline
- 34.78 & 8875 & 8978 & 98.85\% \tabularnewline
+42.2567573595004 & 8858 & 8968 & 98.77\% \tabularnewline
 \end{tabular}
 
 
